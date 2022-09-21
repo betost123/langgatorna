@@ -25,12 +25,14 @@
     "gatsby-transformer-sharp": "^4.23.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-flexbox-grid": "^2.1.2",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@types/node": "^17.0.45",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.26",
     "typescript": "^4.8.3"
   }
 }
