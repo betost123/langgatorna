@@ -35,7 +35,7 @@ const Activities: React.FunctionComponent = () => {
         <Divider color='#99b0a7' />
         <Spacing spacing={3} />
 
-        <Row around='xs'>
+        <Row center='xs'>
           {activitiesList.map((activity) => (
             <Col key={activity.title} md={3} xs={12}>
               <ActivityCard
