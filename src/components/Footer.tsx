@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  background-color: #003c37;
+  background-color: black;
   width: 100vw;
   padding: 2rem;
   //position: absolute;

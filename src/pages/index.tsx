@@ -6,50 +6,16 @@ import { MediaQuery } from "../utils/styling-helpers";
 import Spacing from "../components/Spacer";
 import InfoSlide from "../components/InfoSlide";
 import andersCubaLibre from "../images/anders-cuba-libre.png";
-
-const images = [
-  {
-    image:
-      "https://images.pexels.com/photos/274192/pexels-photo-274192.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    alt: "image1",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/602750/pexels-photo-602750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    alt: "image2",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    alt: "image3",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/1089930/pexels-photo-1089930.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    alt: "image4",
-  },
-  {
-    image:
-      "https://images.pexels.com/photos/1876878/pexels-photo-1876878.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    alt: "image5",
-  },
-];
+import rolfRestaurang from "../images/rolf-restaurang.png";
+import CallToActionBanner from "../components/CallToActionBanner";
+import { BarImages, categoryCardData } from "../utils/data";
+import CategoryCard from "../components/CategoryCard";
+import { H2, H3 } from "../components/Typography";
 
 const Image = styled.img<{ index: number }>`
   max-width: 100%;
   object-fit: cover;
   z-index: ${(props) => (props.index % 2 === 0 ? 10 : 1)};
-`;
-
-const NameContainer = styled.div`
-  width: 100%,
-  margin-top: 30vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  z-index: 20;
-
 `;
 
 const Title = styled.h1`
@@ -64,7 +30,7 @@ const Title = styled.h1`
 const IndexPage = () => {
   return (
     <>
-      <Row center='md'>
+      <Row center='xs'>
         <Title>Välkommen till långgatorna</Title>
       </Row>
       <Spacing spacing={4} />
@@ -76,14 +42,47 @@ const IndexPage = () => {
         link='/news/anders-testar-cuba-libre'
       />
       <Spacing spacing={4} />
+      <CallToActionBanner
+        title='Vill du att din bar ska synas här?'
+        actionText='Kontakta anders@mail.com'
+        mailto='betina@weapp.se'
+      />
+      <Spacing spacing={4} />
 
+      <Col>
+        <H3>Se dagens erbjudanden</H3>
+      </Col>
+      <Row center='xs'>
+        {categoryCardData.map((category) => (
+          <CategoryCard
+            imageSrc={category.imageSrc}
+            title={category.title}
+            onClick={() => console.log(category.title)}
+          />
+        ))}
+      </Row>
+      <Spacing spacing={4} />
+
+      <InfoSlide
+        imageSrc={rolfRestaurang}
+        title='Hundvänliga barer'
+        text='Rolf har sniffat upp de bästa barerna för doggos på långgatan och nu har han sammanställt en lista!'
+        buttonText='Ta del av roffes hundlista'
+        link='/news/hundvanliga-barer'
+        bgColor='#C5C0FF'
+        imageRight
+      />
+      <Spacing spacing={8} />
+
+      {/*}
       <Row>
-        {images.map((image, index) => (
+        {BarImages.map((image, index) => (
           <Col md={6}>
             <Image src={image.image} alt={image.alt} index={index} />
           </Col>
         ))}
       </Row>
+        */}
     </>
   );
 };

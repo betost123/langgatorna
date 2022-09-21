@@ -13,11 +13,13 @@ interface InfoSlideProps {
   text: string;
   buttonText: string;
   link: string;
+  imageRight?: boolean;
+  bgColor?: string;
 }
 
-const Container = styled.div`
+const Container = styled.div<{ bgColor: string }>`
   width: 100%;
-  background-color: #f9f871;
+  background-color: ${(props) => props.bgColor};
 `;
 
 const StyledImage = styled.img`
@@ -32,11 +34,11 @@ const StyledImage = styled.img`
   }
 `;
 
-const TextSection = styled.div`
+const TextSection = styled.div<{ imageRight: boolean }>`
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  text-align: right;
+  text-align: ${(props) => (props.imageRight ? "left" : "right")};
 `;
 
 const InfoSlide: React.FunctionComponent<InfoSlideProps> = ({
@@ -45,22 +47,26 @@ const InfoSlide: React.FunctionComponent<InfoSlideProps> = ({
   text,
   buttonText,
   link,
+  imageRight = false,
+  bgColor = "#f9f871",
 }) => {
   const onClickButton = () => navigate(link);
 
   return (
-    <Container>
+    <Container bgColor={bgColor}>
       <Row>
+        {!imageRight && (
+          <Col md={6}>
+            <StyledImage src={imageSrc} alt={title} />
+          </Col>
+        )}
         <Col md={6}>
-          <StyledImage src={imageSrc} alt={title} />
-        </Col>
-        <Col md={6}>
-          <TextSection>
+          <TextSection imageRight>
             <Spacing spacing={2} />
 
             <H3 color='#000000'>{title}</H3>
             <Spacing spacing={2} />
-            <Col md={8} mdOffset={4}>
+            <Col md={8} mdOffset={imageRight ? 0 : 4}>
               <InfoText color='black'>{text}</InfoText>
             </Col>
             <Spacing spacing={4} />
@@ -69,6 +75,11 @@ const InfoSlide: React.FunctionComponent<InfoSlideProps> = ({
             </Button>
           </TextSection>
         </Col>
+        {imageRight && (
+          <Col md={6}>
+            <StyledImage src={imageSrc} alt={title} />
+          </Col>
+        )}
       </Row>
     </Container>
   );

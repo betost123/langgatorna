@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: black;
     font-family: -apple-system, Roboto, sans-serif, serif;
     color: white;
-    padding: 1rem;
   }
 `;
 
@@ -28,6 +27,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children }) => {
       <div style={{ marginTop: 80 }} />
       <GlobalStyle />
       {children}
+      <Footer />
     </React.Fragment>
   );
 };

@@ -53,10 +53,19 @@ const InfoTextStyle = styled.h2<{ color?: string }>`
 
 const ButtonTextStyle = styled.p`
   text-align: center;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: black;
+`;
+
+const ActionTextStyle = styled.p<{ color?: string }>`
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: ${(props) => props.color ?? "white"};
 `;
 
 export const H2: React.FunctionComponent<TextProps> = ({ children, color }) => (
@@ -76,6 +85,11 @@ export const InfoText: React.FunctionComponent<TextProps> = ({
   children,
   color,
 }) => <InfoTextStyle color={color}>{children}</InfoTextStyle>;
+
+export const ActionText: React.FunctionComponent<TextProps> = ({
+  children,
+  color,
+}) => <ActionTextStyle color={color}>{children}</ActionTextStyle>;
 
 export const ButtonText: React.FunctionComponent<TextProps> = ({
   children,
