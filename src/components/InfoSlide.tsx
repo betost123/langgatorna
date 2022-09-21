@@ -25,7 +25,7 @@ const Container = styled.div<{ bgColor: string }>`
 const StyledImage = styled.img`
   object-fit: cover;
   width: 100%;
-  max-height: 600px;
+  height: 600px;
   margin-bottom: -4px;
 
   ${MediaQuery.MOBILE} {

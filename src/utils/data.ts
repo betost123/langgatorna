@@ -107,3 +107,35 @@ export const barerLista = [
     imageSrc: magasinetBild,
   },
 ];
+
+export const activitiesList = [
+  {
+    title: "Quiz på Byns Bistro",
+    date: "Tisdagar",
+    time: "19.00 - 21.00",
+    groupSize: "2+",
+    description:
+      "Då kära vänner är det dags att dra igång quizzet för säsongen igen. En blandning av allmänbildning och popkultur. Ring och boka upp erat bord redan idag på 031-242003, eller besök hemsidan. Vi har alltid bra erbjudanden på mat & dryck. Varmt välkomna",
+    buttonText: "Boka bord",
+    navLink: "https://bynsbistro.superbexperience.com/reserve/experience",
+  },
+  {
+    title: "Andra Lång Comedy",
+    date: "Måndagar",
+    time: "19.00 - 21.00",
+    groupSize: "The Abyss",
+    description:
+      "Andralång Comedy med allt från debutanter till mer erfarna komiker. Varje måndag kl 20:00 på the Abyss",
+    buttonText: "Besök hemsidan",
+    navLink: "https://theabyss.se",
+  },
+  {
+    title: "Quiz med Mike & Jimmy",
+    date: "Mån - Tor",
+    groupSize: "Flera barer!",
+    description:
+      "Jimmy & Mike, Göteborgs bästa, roligaste och snyggaste quizmasters som har quiz på olika ställen. Se fullt schema på hemsidan.",
+    buttonText: "Quiz-schema",
+    navLink: "https://www.facebook.com/quizjimmymike/",
+  },
+];

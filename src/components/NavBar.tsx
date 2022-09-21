@@ -114,6 +114,7 @@ const NavLink = styled(Link)`
   font-size: 18px;
   margin-right: 1rem;
   font-family: -apple-system, Roboto, sans-serif, serif;
+  opacity: 0.7;
 `;
 
 const NavBar: React.FC<INavBar> = ({
@@ -130,10 +131,18 @@ const NavBar: React.FC<INavBar> = ({
         <Hamburger navBarOpen={navBarOpen} />
       </Toggle>
       <NavBox navBarOpen={navBarOpen}>
-        <NavLink to='/bars'>Barer</NavLink>
-        <NavLink to='/activities'>Aktiviteter</NavLink>
-        <NavLink to='/games'>Spel</NavLink>
-        <NavLink to='/guestbook'>Gästbok</NavLink>
+        <NavLink activeStyle={{ opacity: 1 }} to='/bars'>
+          Barer
+        </NavLink>
+        <NavLink activeStyle={{ opacity: 1 }} to='/activities'>
+          Aktiviteter
+        </NavLink>
+        <NavLink activeStyle={{ opacity: 1 }} to='/games'>
+          Spel
+        </NavLink>
+        <NavLink activeStyle={{ opacity: 1 }} to='/guestbook'>
+          Gästbok
+        </NavLink>
       </NavBox>
     </Navigation>
   );

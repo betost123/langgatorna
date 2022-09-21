@@ -83,6 +83,15 @@ const H4Style = styled.h2<{ color?: string; textAlign?: string }>`
   }
 `;
 
+const SmallBodyStyle = styled.h2<{ color?: string }>`
+  font-size: 12px;
+  color: ${(props) => props.color ?? "white"};
+  font-weight: 400;
+  ${MediaQuery.MOBILE} {
+    font-size: 11px;
+  }
+`;
+
 export const H2: React.FunctionComponent<TextProps> = ({ children, color }) => (
   <H2Style color={color}>{children}</H2Style>
 );
@@ -101,6 +110,11 @@ export const Body: React.FunctionComponent<TextProps> = ({
   children,
   color,
 }) => <BodyStyle color={color}>{children}</BodyStyle>;
+
+export const SmallBody: React.FunctionComponent<TextProps> = ({
+  children,
+  color,
+}) => <SmallBodyStyle color={color}>{children}</SmallBodyStyle>;
 
 export const InfoText: React.FunctionComponent<TextProps> = ({
   children,

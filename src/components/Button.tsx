@@ -5,7 +5,7 @@ import { ButtonText } from "./Typography";
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  variant: "primary" | "secondary";
+  variant?: "primary" | "secondary";
 }
 
 const SecondaryButton = styled.button`
@@ -16,15 +16,29 @@ const SecondaryButton = styled.button`
   background-color: rgba(0, 0, 0, 0.1);
 `;
 
+const PrimaryButton = styled.button`
+  padding: 0.5rem 3rem;
+  border-radius: 2rem;
+  background-color: white;
+`;
+
 const Button: React.FunctionComponent<ButtonProps> = ({
   children,
   onClick,
   variant = "primary",
 }) => {
   return (
-    <SecondaryButton onClick={onClick}>
-      <ButtonText>{children}</ButtonText>
-    </SecondaryButton>
+    <>
+      {variant === "primary" ? (
+        <PrimaryButton onClick={onClick}>
+          <ButtonText>{children}</ButtonText>
+        </PrimaryButton>
+      ) : (
+        <SecondaryButton onClick={onClick}>
+          <ButtonText>{children}</ButtonText>
+        </SecondaryButton>
+      )}
+    </>
   );
 };
 

@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: black;
     font-family: -apple-system, Roboto, sans-serif, serif;
     color: white;
+    overflow-x: hidden;
   }
 `;
 
