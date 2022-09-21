@@ -87,8 +87,7 @@ const GuestBook: React.FunctionComponent = () => {
             <Col md={8}>
               <TextArea
                 name='message'
-                placeholder='Skriv inget taskigt, lämna inte massa jobbig gdpr-info som vi måste
-            ta bort :)'
+                placeholder='Skriv inget taskigt'
                 onChange={handleInputs}
               />
             </Col>

@@ -6,8 +6,8 @@ import { Divider } from "../components/Divider";
 import HeroBanner from "../components/HeroBanner";
 import InfoSlide from "../components/InfoSlide";
 import Spacing from "../components/Spacer";
-import { H2, InfoText } from "../components/Typography";
-import { activitiesList } from "../utils/data";
+import { ActionText, H2, InfoText } from "../components/Typography";
+import { activitiesList, lunchOfToday } from "../utils/data";
 
 const Content = styled.div`
   padding: 1rem;
@@ -35,6 +35,9 @@ const Activities: React.FunctionComponent = () => {
         <Divider color='#99b0a7' />
         <Spacing spacing={3} />
 
+        <ActionText>
+          Idag {dd} / {mm}
+        </ActionText>
         <Row center='xs' around='xs'>
           {activitiesList.map((activity) => (
             <Col key={activity.title} md={3} xs={12}>
@@ -42,6 +45,21 @@ const Activities: React.FunctionComponent = () => {
                 {...activity}
                 onClick={() => window.open(activity.navLink)}
               />
+            </Col>
+          ))}
+        </Row>
+        <Spacing spacing={6} />
+
+        <Divider color='#99b0a7' />
+        <Spacing spacing={3} />
+
+        <ActionText>
+          Dagens lunch {dd} / {mm}
+        </ActionText>
+        <Row center='xs' around='xs'>
+          {lunchOfToday.map((lunch) => (
+            <Col key={lunch.title} md={3} xs={12}>
+              <ActivityCard {...lunch} />
             </Col>
           ))}
         </Row>

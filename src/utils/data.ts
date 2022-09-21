@@ -139,3 +139,27 @@ export const activitiesList = [
     navLink: "https://www.facebook.com/quizjimmymike/",
   },
 ];
+
+export const lunchOfToday = [
+  {
+    title: "Tvinky",
+    time: "11.30 - 15.00",
+    groupSize: "125 - 135 kr",
+    description:
+      "Dagens Fisk - Meunièrestekt Flundra. Veckans vegetariska - Friterad Fetaost. Veckans kött - Viltfärslimpa",
+  },
+  {
+    title: "Papa Mastani",
+    time: "11.30 - 15.00",
+    groupSize: "125 - 135 kr",
+    description:
+      "MAROKANSK HÖGREVSGRYTA MED PLOMMON & RIS. PASTA TAGLIATELLE MED VARMRÖKT LAX. SURDEGSPIZZA MED BURRATA, PESTO & SOLTORKADE TOMATER.",
+  },
+  {
+    title: "Brödernas",
+    time: "11.30 - 15.00",
+    groupSize: "120 kr",
+    description:
+      "Valfri enkelburgare inklusive pommes frites eller side salad. En läsk och kaffe ingår. Kycklingsallad, halloumisallad, barnsallad",
+  },
+];
