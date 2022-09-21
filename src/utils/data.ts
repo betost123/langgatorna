@@ -1,3 +1,16 @@
+import danskenImage from "../images/dansken.png";
+import tullenImage from "../images/olstugan-tullen.png";
+import contrastImage from "../images/contrast.png";
+import bynsImage from "../images/byns-bistro.png";
+import brygghusetImage from "../images/brygghuset.png";
+import kingsHeadImage from "../images/kings-head.png";
+import hopsImage from "../images/hops.png";
+import haketImage from "../images/haket.png";
+import niansImage from "../images/9ans.png";
+import kickOffImage from "../images/kick-off.png";
+import tvinkyImage from "../images/tvinky.png";
+import magasinetBild from "../images/magasinet-bild.png";
+
 export const categoryCardData = [
   {
     imageSrc:
@@ -41,5 +54,56 @@ export const BarImages = [
     image:
       "https://images.pexels.com/photos/1876878/pexels-photo-1876878.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     alt: "image5",
+  },
+];
+
+export const barerLista = [
+  {
+    name: "Dansken",
+    imageSrc: danskenImage,
+  },
+  {
+    name: "Ölstugan Tullen",
+    imageSrc: tullenImage,
+  },
+  {
+    name: "Contrast",
+    imageSrc: contrastImage,
+  },
+  {
+    name: "Byns Bistro",
+    imageSrc: bynsImage,
+  },
+  {
+    name: "Brygghuset",
+    imageSrc: brygghusetImage,
+  },
+  {
+    name: "Kings Head",
+    imageSrc: kingsHeadImage,
+  },
+  {
+    name: "Hops",
+    imageSrc: hopsImage,
+  },
+  {
+    name: "Haket",
+    imageSrc: haketImage,
+  },
+  {
+    name: "9:ans ölhall",
+    imageSrc: niansImage,
+  },
+  {
+    name: "Kick off",
+    imageSrc: kickOffImage,
+  },
+  {
+    name: "Tvinky",
+    imageSrc: tvinkyImage,
+  },
+  {
+    name: "Kafe Magasinet",
+    imageSrc: magasinetBild,
   },
 ];

@@ -64,10 +64,14 @@ const InfoSlide: React.FunctionComponent<InfoSlideProps> = ({
           <TextSection imageRight>
             <Spacing spacing={2} />
 
-            <H3 color='#000000'>{title}</H3>
+            <H3 color='#000000' textAlign={imageRight ? "left" : "right"}>
+              {title}
+            </H3>
             <Spacing spacing={2} />
             <Col md={8} mdOffset={imageRight ? 0 : 4}>
-              <InfoText color='black'>{text}</InfoText>
+              <InfoText color='black' textAlign={imageRight ? "left" : "right"}>
+                {text}
+              </InfoText>
             </Col>
             <Spacing spacing={4} />
             <Button variant='secondary' onClick={onClickButton}>

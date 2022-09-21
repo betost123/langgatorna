@@ -7,6 +7,7 @@ import Spacing from "../components/Spacer";
 import InfoSlide from "../components/InfoSlide";
 import andersCubaLibre from "../images/anders-cuba-libre.png";
 import rolfRestaurang from "../images/rolf-restaurang.png";
+import magasinetBild from "../images/magasinet-bild.png";
 import CallToActionBanner from "../components/CallToActionBanner";
 import { BarImages, categoryCardData } from "../utils/data";
 import CategoryCard from "../components/CategoryCard";
@@ -55,6 +56,7 @@ const IndexPage = () => {
       <Row center='xs'>
         {categoryCardData.map((category) => (
           <CategoryCard
+            key={category.title}
             imageSrc={category.imageSrc}
             title={category.title}
             onClick={() => console.log(category.title)}
@@ -72,17 +74,24 @@ const IndexPage = () => {
         bgColor='#C5C0FF'
         imageRight
       />
+      <Spacing spacing={4} />
+      <InfoSlide
+        imageSrc={magasinetBild}
+        title='Heldag på långgatorna?'
+        text='Här är den ultimata guiden för dig som vill spendera 07.30 - 02:00 på långgatorna.'
+        buttonText='Läs mer'
+        link='/news/heldag-pa-langen'
+        bgColor='#A9D8C7'
+      />
       <Spacing spacing={8} />
 
-      {/*}
       <Row>
         {BarImages.map((image, index) => (
-          <Col md={6}>
+          <Col md={6} key={index}>
             <Image src={image.image} alt={image.alt} index={index} />
           </Col>
         ))}
       </Row>
-        */}
     </>
   );
 };

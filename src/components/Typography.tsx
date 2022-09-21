@@ -5,6 +5,7 @@ import { MediaQuery } from "../utils/styling-helpers";
 interface TextProps {
   children: React.ReactNode;
   color?: string;
+  textAlign?: string;
 }
 
 const BigTitleStyle = styled.h1<{ color?: string }>`
@@ -25,9 +26,10 @@ const H2Style = styled.h2<{ color?: string }>`
   }
 `;
 
-const H3Style = styled.h2<{ color?: string }>`
+const H3Style = styled.h2<{ color?: string; textAlign?: string }>`
   font-size: 36px;
   font-weight: 400;
+  text-align: ${(props) => props.textAlign};
   color: ${(props) => props.color ?? "white"};
   ${MediaQuery.MOBILE} {
     font-size: 24px;
@@ -42,9 +44,10 @@ const BodyStyle = styled.h2<{ color?: string }>`
   }
 `;
 
-const InfoTextStyle = styled.h2<{ color?: string }>`
+const InfoTextStyle = styled.h2<{ color?: string; textAlign?: string }>`
   font-size: 24px;
   font-weight: 500;
+  text-align: ${(props) => props.textAlign};
   color: ${(props) => props.color ?? "white"};
   ${MediaQuery.MOBILE} {
     font-size: 20px;
@@ -68,12 +71,30 @@ const ActionTextStyle = styled.p<{ color?: string }>`
   color: ${(props) => props.color ?? "white"};
 `;
 
+const H4Style = styled.h2<{ color?: string; textAlign?: string }>`
+  font-size: 18px;
+  font-weight: 500;
+  text-align: ${(props) => props.textAlign ?? "center"};
+  color: ${(props) => props.color ?? "white"};
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  ${MediaQuery.MOBILE} {
+    font-size: 16px;
+  }
+`;
+
 export const H2: React.FunctionComponent<TextProps> = ({ children, color }) => (
   <H2Style color={color}>{children}</H2Style>
 );
 
-export const H3: React.FunctionComponent<TextProps> = ({ children, color }) => (
-  <H3Style color={color}>{children}</H3Style>
+export const H3: React.FunctionComponent<TextProps> = ({
+  children,
+  color,
+  textAlign,
+}) => (
+  <H3Style color={color} textAlign={textAlign}>
+    {children}
+  </H3Style>
 );
 
 export const Body: React.FunctionComponent<TextProps> = ({
@@ -84,7 +105,22 @@ export const Body: React.FunctionComponent<TextProps> = ({
 export const InfoText: React.FunctionComponent<TextProps> = ({
   children,
   color,
-}) => <InfoTextStyle color={color}>{children}</InfoTextStyle>;
+  textAlign,
+}) => (
+  <InfoTextStyle color={color} textAlign={textAlign}>
+    {children}
+  </InfoTextStyle>
+);
+
+export const H4: React.FunctionComponent<TextProps> = ({
+  children,
+  color,
+  textAlign,
+}) => (
+  <H4Style color={color} textAlign={textAlign}>
+    {children}
+  </H4Style>
+);
 
 export const ActionText: React.FunctionComponent<TextProps> = ({
   children,
