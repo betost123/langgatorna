@@ -137,19 +137,39 @@ const NavBar: React.FC<INavBar> = ({
         <Hamburger navBarOpen={navBarOpen} />
       </Toggle>
       <NavBox navBarOpen={navBarOpen}>
-        <NavLink activeStyle={{ opacity: 1 }} to='/bars'>
+        <NavLink
+          activeStyle={{ opacity: 1 }}
+          to='/bars'
+          onClick={setNavBarOpen}
+        >
           Barer
         </NavLink>
-        <NavLink activeStyle={{ opacity: 1 }} to='/activities'>
+        <NavLink
+          activeStyle={{ opacity: 1 }}
+          to='/activities'
+          onClick={setNavBarOpen}
+        >
           Aktiviteter
         </NavLink>
-        <NavLink activeStyle={{ opacity: 1 }} to='/games'>
+        <NavLink
+          activeStyle={{ opacity: 1 }}
+          to='/games'
+          onClick={setNavBarOpen}
+        >
           Spel
         </NavLink>
-        <NavLink activeStyle={{ opacity: 1 }} to='/guestbook'>
+        <NavLink
+          activeStyle={{ opacity: 1 }}
+          to='/guestbook'
+          onClick={setNavBarOpen}
+        >
           Gästbok
         </NavLink>
-        <NavLink activeStyle={{ opacity: 1 }} to='/news'>
+        <NavLink
+          activeStyle={{ opacity: 1 }}
+          to='/news'
+          onClick={setNavBarOpen}
+        >
           Nyheter
         </NavLink>
       </NavBox>
