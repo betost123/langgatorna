@@ -14,12 +14,7 @@ interface BarCardProps {
   imageSrc: string;
   name: string;
   bgColor?: string;
-  dogFriendly?: boolean;
-  activityHost?: boolean;
-  greatBeers?: boolean;
-  vegetarian?: boolean;
-  gangFavorite?: boolean;
-  goodBathrooms?: boolean;
+  filters?: Array<string>;
 }
 
 const Image = styled.img`
@@ -39,24 +34,20 @@ const BarCard: React.FunctionComponent<BarCardProps> = ({
   imageSrc,
   name,
   bgColor,
-  dogFriendly,
-  activityHost,
-  greatBeers,
-  vegetarian,
-  gangFavorite,
-  goodBathrooms,
+  filters,
 }) => {
+  console.log(filters);
   return (
     <Col md={4} xs={12}>
       <Image src={imageSrc} alt={name} />
       <TextContainer bgColor={bgColor}>
         <H4 color='black'>{name}</H4>
-        {dogFriendly && <DogIcon />}
-        {activityHost && <PartyHatIcon />}
-        {greatBeers && <BeerIcon />}
-        {vegetarian && <MangoIcon />}
-        {gangFavorite && <PillIcon />}
-        {goodBathrooms && <RestroomIcon />}
+        {filters?.includes("dogFriendly") && <DogIcon />}
+        {filters?.includes("activityHost") && <PartyHatIcon />}
+        {filters?.includes("greatBeers") && <BeerIcon />}
+        {filters?.includes("vegetarian") && <MangoIcon />}
+        {filters?.includes("gangFavorite") && <PillIcon />}
+        {filters?.includes("goodBathrooms") && <RestroomIcon />}
       </TextContainer>
     </Col>
   );

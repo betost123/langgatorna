@@ -10,6 +10,7 @@ import niansImage from "../images/9ans.png";
 import kickOffImage from "../images/kick-off.png";
 import tvinkyImage from "../images/tvinky.png";
 import magasinetBild from "../images/magasinet-bild.png";
+import { BarItem } from "./models";
 
 export const categoryCardData = [
   {
@@ -87,38 +88,38 @@ export const dogFriendlyBarsList = [
   },
 ];
 
-export const barerLista = [
+const dogFriendly = "dogFriendly";
+const greatBeers = "greatBeers";
+const activityHost = "activityHost";
+const vegetarian = "vegetarian";
+const goodBathrooms = "goodBathrooms";
+const gangFavorite = "gangFavorite";
+
+export const barerLista: Array<BarItem> = [
   {
     name: "Dansken",
     imageSrc: danskenImage,
-    dogFriendly: true,
+    filters: [dogFriendly],
   },
   {
     name: "Ölstugan Tullen",
     imageSrc: tullenImage,
-    greatBeers: true,
+    filters: [greatBeers],
   },
   {
     name: "Contrast",
     imageSrc: contrastImage,
-    dogFriendly: true,
-    activityHost: true,
-    vegetarian: true,
-    goodBathrooms: true,
+    filters: [dogFriendly, activityHost, vegetarian, goodBathrooms],
   },
   {
     name: "Byns Bistro",
     imageSrc: bynsImage,
-    dogFriendly: true,
-    activityHost: true,
-    gangFavorite: true,
-    goodBathrooms: true,
+    filters: [dogFriendly, activityHost, gangFavorite, goodBathrooms],
   },
   {
     name: "Brygghuset",
     imageSrc: brygghusetImage,
-    activityHost: true,
-    gangFavorite: true,
+    filters: [activityHost, gangFavorite],
   },
   {
     name: "Kings Head",
@@ -127,12 +128,12 @@ export const barerLista = [
   {
     name: "Hops",
     imageSrc: hopsImage,
-    greatBeers: true,
+    filters: [greatBeers],
   },
   {
     name: "Haket",
     imageSrc: haketImage,
-    activityHost: true,
+    filters: [activityHost],
   },
   {
     name: "9:ans ölhall",
@@ -141,23 +142,17 @@ export const barerLista = [
   {
     name: "Kick off",
     imageSrc: kickOffImage,
-    dogFriendly: true,
-    activityHost: true,
-    gangFavorite: true,
+    filters: [dogFriendly, activityHost, gangFavorite],
   },
   {
     name: "Tvinky",
     imageSrc: tvinkyImage,
-    dogFriendly: true,
-    vegetarian: true,
-    goodBathrooms: true,
+    filters: [dogFriendly, vegetarian, goodBathrooms],
   },
   {
     name: "Kafe Magasinet",
     imageSrc: magasinetBild,
-    dogFriendly: true,
-    vegetarian: true,
-    goodBathrooms: true,
+    filters: [dogFriendly, vegetarian, goodBathrooms],
   },
 ];
 

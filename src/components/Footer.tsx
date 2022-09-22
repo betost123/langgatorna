@@ -43,13 +43,13 @@ export const Footer: React.FC = () => {
 
         <Col md={3} xs={6}>
           <H4 textAlign='left'>Sociala Medier</H4>
-          <StyledLink to='https://instagram.com/enlitenrolf'>
+          <StyledLink to='https://instagram.com/enlitenrolf' target='_blank'>
             <ActionText textAlign='left'>Instagram</ActionText>
           </StyledLink>
-          <StyledLink to='https://instagram.com/enlitenrolf'>
+          <StyledLink to='https://instagram.com/enlitenrolf' target='_blank'>
             <ActionText textAlign='left'>TikTok</ActionText>
           </StyledLink>
-          <StyledLink to='https://instagram.com/enlitenrolf'>
+          <StyledLink to='https://instagram.com/enlitenrolf' target='_blank'>
             <ActionText textAlign='left'>Encrochat</ActionText>
           </StyledLink>
         </Col>
