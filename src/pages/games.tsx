@@ -67,6 +67,7 @@ const Games: React.FunctionComponent = () => {
           imageRight
         />
       </Grid>
+      <Spacing spacing={8} />
     </>
   );
 };

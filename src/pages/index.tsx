@@ -9,9 +9,10 @@ import andersCubaLibre from "../images/anders-cuba-libre.png";
 import rolfRestaurang from "../images/rolf-restaurang.png";
 import magasinetBild from "../images/magasinet-bild.png";
 import CallToActionBanner from "../components/CallToActionBanner";
-import { BarImages, categoryCardData } from "../utils/data";
+import { categoryCardData } from "../utils/data";
 import CategoryCard from "../components/CategoryCard";
 import { H3 } from "../components/Typography";
+import { usePresence } from "framer-motion";
 
 const Image = styled.img<{ index: number }>`
   max-width: 100%;
@@ -29,6 +30,12 @@ const Title = styled.h1`
 `;
 
 const IndexPage = () => {
+  const [isPresent, safeToRemove] = usePresence();
+
+  React.useEffect(() => {
+    !isPresent && setTimeout(safeToRemove, 1000);
+  }, [isPresent]);
+
   return (
     <>
       <Grid>

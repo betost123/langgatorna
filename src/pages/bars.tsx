@@ -14,6 +14,7 @@ import DogIcon from "../components/icons/DogIcon";
 import BeerIcon from "../components/icons/BeerIcon";
 import PillIcon from "../components/icons/PillIcon";
 import RestroomIcon from "../components/icons/RestroomIcon";
+import { usePresence } from "framer-motion";
 
 const Content = styled.div`
   padding: 1rem;
@@ -35,6 +36,12 @@ const HorizontalSpacer = styled.div`
 `;
 
 const Bars: React.FunctionComponent = () => {
+  const [isPresent, safeToRemove] = usePresence();
+
+  React.useEffect(() => {
+    !isPresent && setTimeout(safeToRemove, 1000);
+  }, [isPresent]);
+
   return (
     <>
       <Spacing spacing={5} />
