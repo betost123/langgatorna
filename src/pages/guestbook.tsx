@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Col, Row } from "react-flexbox-grid";
+import { Col, Grid, Row } from "react-flexbox-grid";
 import styled from "styled-components";
 import Button from "../components/Button";
 import ChatMessage from "../components/ChatMessage";
@@ -76,32 +76,34 @@ const GuestBook: React.FunctionComponent = () => {
     <>
       <Spacing spacing={5} />
       <HeroBanner imageSrc='https://www.gp.se/image/policy:1.74192116:1654355402/lCCF05qs932pVHNRQF_RbwtHySM.jpg?f=Regular&w=960&$p$f$w=31e06ff' />
-      <Content>
-        <Col>
-          <H2>Gästbok</H2>
-        </Col>
-        <Col md={12}>
-          <Body>Här kan du lämna meddelanden i gästboken!</Body>
-          <Spacing spacing={2} />
-          <Row around='xs'>
-            <Col md={8}>
-              <TextArea
-                name='message'
-                placeholder='Skriv inget taskigt'
-                onChange={handleInputs}
-              />
-            </Col>
-            <Col md={4}>
-              <Button onClick={handleSubmit}>Skicka</Button>
-            </Col>
-          </Row>
-        </Col>
-        <Spacing spacing={3} />
-        {messages.map((message, index) => (
-          <ChatMessage key={index} {...message} />
-        ))}
-        <Spacing spacing={8} />
-      </Content>
+      <Grid>
+        <Content>
+          <Col>
+            <H2>Gästbok</H2>
+          </Col>
+          <Col md={12}>
+            <Body>Här kan du lämna meddelanden i gästboken!</Body>
+            <Spacing spacing={2} />
+            <Row around='xs'>
+              <Col md={8}>
+                <TextArea
+                  name='message'
+                  placeholder='Skriv inget taskigt'
+                  onChange={handleInputs}
+                />
+              </Col>
+              <Col md={4}>
+                <Button onClick={handleSubmit}>Skicka</Button>
+              </Col>
+            </Row>
+          </Col>
+          <Spacing spacing={3} />
+          {messages.map((message, index) => (
+            <ChatMessage key={index} {...message} />
+          ))}
+          <Spacing spacing={8} />
+        </Content>
+      </Grid>
     </>
   );
 };

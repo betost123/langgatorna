@@ -91,22 +91,34 @@ export const barerLista = [
   {
     name: "Dansken",
     imageSrc: danskenImage,
+    dogFriendly: true,
   },
   {
     name: "Ölstugan Tullen",
     imageSrc: tullenImage,
+    greatBeers: true,
   },
   {
     name: "Contrast",
     imageSrc: contrastImage,
+    dogFriendly: true,
+    activityHost: true,
+    vegetarian: true,
+    goodBathrooms: true,
   },
   {
     name: "Byns Bistro",
     imageSrc: bynsImage,
+    dogFriendly: true,
+    activityHost: true,
+    gangFavorite: true,
+    goodBathrooms: true,
   },
   {
     name: "Brygghuset",
     imageSrc: brygghusetImage,
+    activityHost: true,
+    gangFavorite: true,
   },
   {
     name: "Kings Head",
@@ -115,10 +127,12 @@ export const barerLista = [
   {
     name: "Hops",
     imageSrc: hopsImage,
+    greatBeers: true,
   },
   {
     name: "Haket",
     imageSrc: haketImage,
+    activityHost: true,
   },
   {
     name: "9:ans ölhall",
@@ -127,14 +141,23 @@ export const barerLista = [
   {
     name: "Kick off",
     imageSrc: kickOffImage,
+    dogFriendly: true,
+    activityHost: true,
+    gangFavorite: true,
   },
   {
     name: "Tvinky",
     imageSrc: tvinkyImage,
+    dogFriendly: true,
+    vegetarian: true,
+    goodBathrooms: true,
   },
   {
     name: "Kafe Magasinet",
     imageSrc: magasinetBild,
+    dogFriendly: true,
+    vegetarian: true,
+    goodBathrooms: true,
   },
 ];
 

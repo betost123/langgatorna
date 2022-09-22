@@ -18,7 +18,6 @@ interface InfoSlideProps {
 }
 
 const Container = styled.div<{ bgColor: string }>`
-  width: 100%;
   background-color: ${(props) => props.bgColor};
 `;
 

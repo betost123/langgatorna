@@ -1,15 +1,10 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
-import styled from "styled-components";
 import GameCard from "../components/GameCard";
 import InfoSlide from "../components/InfoSlide";
 import Spacing from "../components/Spacer";
 import { H2 } from "../components/Typography";
 import barrundaImage from "../images/barrunda.jpg";
-
-const Content = styled.div`
-  padding: 1rem;
-`;
 
 const gamesList = [
   {
@@ -50,30 +45,28 @@ const gamesList = [
 const Games: React.FunctionComponent = () => {
   return (
     <>
-      <Content>
+      <Grid>
         <Col>
           <H2>Spel</H2>
         </Col>
-        <Grid>
-          <Row center='xs' around='xs'>
-            {gamesList.map((game) => (
-              <Col md={4} xs={12} key={game.title}>
-                <GameCard {...game} />
-              </Col>
-            ))}
-          </Row>
-        </Grid>
-      </Content>
-      <Spacing spacing={4} />
-      <InfoSlide
-        imageSrc={barrundaImage}
-        title='Barrunda på andra lång'
-        text='Sugen på ett aktivt spel? Testa barrundan på andra lång! Vi har sammanställt listan på alla barer man måste klara, lätt, medel och expert-versioner!'
-        buttonText='Läs mer'
-        link='/news/barrunda-guide'
-        bgColor='#62BAAC'
-        imageRight
-      />
+        <Row center='xs' around='xs'>
+          {gamesList.map((game) => (
+            <Col md={4} xs={12} key={game.title}>
+              <GameCard {...game} />
+            </Col>
+          ))}
+        </Row>
+        <Spacing spacing={4} />
+        <InfoSlide
+          imageSrc={barrundaImage}
+          title='Barrunda på andra lång'
+          text='Sugen på ett aktivt spel? Testa barrundan på andra lång! Vi har sammanställt listan på alla barer man måste klara, lätt, medel och expert-versioner!'
+          buttonText='Läs mer'
+          link='/news/barrunda-guide'
+          bgColor='#62BAAC'
+          imageRight
+        />
+      </Grid>
     </>
   );
 };

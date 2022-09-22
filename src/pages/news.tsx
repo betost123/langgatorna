@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Col, Grid, Row } from "react-flexbox-grid";
+import { Col, Grid } from "react-flexbox-grid";
 import styled from "styled-components";
-import GameCard from "../components/GameCard";
 import InfoSlide from "../components/InfoSlide";
 import Spacing from "../components/Spacer";
 import { H2 } from "../components/Typography";
@@ -17,12 +16,10 @@ const Content = styled.div`
 
 const Games: React.FunctionComponent = () => {
   return (
-    <>
-      <Content>
-        <Col>
-          <H2>Nyheter</H2>
-        </Col>
-      </Content>
+    <Grid>
+      <Col>
+        <H2>Nyheter</H2>
+      </Col>
       <Spacing spacing={4} />
       <InfoSlide
         imageSrc={andersGuide}
@@ -70,7 +67,7 @@ const Games: React.FunctionComponent = () => {
         link='/news/heldag-pa-langen'
         bgColor='#A9D8C7'
       />
-    </>
+    </Grid>
   );
 };
 

@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
-import styled from "styled-components";
 import ActivityCard from "../components/ActivityCard";
 import { Divider } from "../components/Divider";
 import HeroBanner from "../components/HeroBanner";
@@ -8,10 +7,6 @@ import InfoSlide from "../components/InfoSlide";
 import Spacing from "../components/Spacer";
 import { ActionText, H2, InfoText } from "../components/Typography";
 import { activitiesList, lunchOfToday } from "../utils/data";
-
-const Content = styled.div`
-  padding: 1rem;
-`;
 
 const Activities: React.FunctionComponent = () => {
   const today = new Date();
@@ -22,7 +17,7 @@ const Activities: React.FunctionComponent = () => {
     <>
       <Spacing spacing={5} />
       <HeroBanner imageSrc='https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' />
-      <Content>
+      <Grid>
         <Col>
           <H2>Aktiviteter</H2>
         </Col>
@@ -74,7 +69,7 @@ const Activities: React.FunctionComponent = () => {
           bgColor='#E8F3F5'
           imageRight
         />
-      </Content>
+      </Grid>
     </>
   );
 };
