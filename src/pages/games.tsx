@@ -52,7 +52,7 @@ const Games: React.FunctionComponent = () => {
         <Grid>
           <Row>
             {gamesList.map((game) => (
-              <Col md={4} xs={11} key={game.title}>
+              <Col md={4} xs={12} key={game.title}>
                 <GameCard {...game} />
               </Col>
             ))}

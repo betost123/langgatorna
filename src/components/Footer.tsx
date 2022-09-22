@@ -70,6 +70,7 @@ export const Footer: React.FC = () => {
           <StyledImage src={swishQrCode} />
         </Col>
       </Row>
+      <Spacing spacing={2} />
     </Grid>
   );
 };

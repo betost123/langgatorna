@@ -13,9 +13,11 @@ import MilkIcon from "./icons/MilkIcon";
 
 const Container = styled.div`
   background-color: #9eadbd;
-  width: 100%;
-  height: 100%;
+  height: 95%;
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 `;
 
 const DishTitleStyle = styled.h1`
@@ -54,33 +56,35 @@ const LunchCard: React.FunctionComponent<LunchCardModel> = ({
 
   return (
     <Container>
-      <H4 color='white'>{restaurant}</H4>
-      {optionalInfo && (
-        <SmallBody color='#385772' textAlign='center'>
-          {optionalInfo}
-        </SmallBody>
-      )}
-
-      <Spacing spacing={1} />
-      <Divider />
-      <Spacing spacing={1} />
-
-      {lunchItems.map((item, index) => (
-        <div key={item.nameOfDish + index}>
-          <DishTitleStyle>
-            {item.nameOfDish}
-            <span style={{ color: "#385772" }}>
-              {item.cost && ` - ${item.cost}kr`}
-            </span>
-          </DishTitleStyle>
+      <div>
+        <H4 color='white'>{restaurant}</H4>
+        {optionalInfo && (
           <SmallBody color='#385772' textAlign='center'>
-            {item.info}
+            {optionalInfo}
           </SmallBody>
-          {item.allergies && <Icons allergies={item.allergies} />}
-          <Spacing spacing={1} />
-        </div>
-      ))}
-      <Spacing spacing={2} />
+        )}
+
+        <Spacing spacing={1} />
+        <Divider />
+        <Spacing spacing={1} />
+
+        {lunchItems.map((item, index) => (
+          <div key={item.nameOfDish + index}>
+            <DishTitleStyle>
+              {item.nameOfDish}
+              <span style={{ color: "#385772" }}>
+                {item.cost && ` - ${item.cost}kr`}
+              </span>
+            </DishTitleStyle>
+            <SmallBody color='#385772' textAlign='center'>
+              {item.info}
+            </SmallBody>
+            {item.allergies && <Icons allergies={item.allergies} />}
+            <Spacing spacing={1} />
+          </div>
+        ))}
+        <Spacing spacing={2} />
+      </div>
       {navLink && (
         <Button onClick={onClickVisitWebsite} variant='secondary'>
           Besök Hemsida

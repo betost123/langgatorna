@@ -18,9 +18,11 @@ interface ActivityCardProps {
 
 const Container = styled.div`
   background-color: #99b0a7;
-  width: 100%;
-  height: 100%;
+  height: 90%;
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 `;
 
 const QuickInfoContainer = styled.div`
@@ -45,16 +47,18 @@ const ActivityCard: React.FunctionComponent<ActivityCardProps> = ({
 }) => {
   return (
     <Container>
-      <H4>{title}</H4>
-      <Divider color='black' />
-      <QuickInfoContainer>
-        <ActionText color='black'>{date}</ActionText>
-        {time && <ActionText color='black'>tid: {time}</ActionText>}
-        <ActionText color='black'>{groupSize}</ActionText>
-      </QuickInfoContainer>
-      <DescriptionContainer>
-        <SmallBody color='black'>{description}</SmallBody>
-      </DescriptionContainer>
+      <div>
+        <H4>{title}</H4>
+        <Divider color='black' />
+        <QuickInfoContainer>
+          <ActionText color='black'>{date}</ActionText>
+          {time && <ActionText color='black'>tid: {time}</ActionText>}
+          <ActionText color='black'>{groupSize}</ActionText>
+        </QuickInfoContainer>
+        <DescriptionContainer>
+          <SmallBody color='black'>{description}</SmallBody>
+        </DescriptionContainer>
+      </div>
       {buttonText && (
         <Row center='xs'>
           <Spacing spacing={1} />

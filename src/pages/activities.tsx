@@ -39,7 +39,7 @@ const Activities: React.FunctionComponent = () => {
           </InfoText>
         </Col>
         <Spacing spacing={4} />
-        <Divider color='#99b0a7' />
+        <Divider color='#9eadbd' />
         <Spacing spacing={3} />
 
         <ActionText>
@@ -47,7 +47,7 @@ const Activities: React.FunctionComponent = () => {
         </ActionText>
         <StyledRow>
           {activitiesList.map((activity) => (
-            <Col key={activity.title} md={3} xs={11}>
+            <Col key={activity.title} md={4} xs={11}>
               <ActivityCard
                 {...activity}
                 onClick={() => window.open(activity.navLink)}
@@ -63,17 +63,18 @@ const Activities: React.FunctionComponent = () => {
         <ActionText>
           Dagens lunch {dd} / {mm}
         </ActionText>
-        <Grid>
-          <Row>
-            {lunchOfToday.map((lunch, index) => (
-              <Col key={lunch.restaurant + index} md={4} xs={11}>
-                <LunchCard {...lunch} />
-              </Col>
-            ))}
-          </Row>
-        </Grid>
+        <Row>
+          {lunchOfToday.map((lunch, index) => (
+            <Col key={lunch.restaurant + index} md={4} xs={12}>
+              <LunchCard {...lunch} />
+            </Col>
+          ))}
+        </Row>
+        <Spacing spacing={5} />
 
-        <Spacing spacing={8} />
+        <Divider color='#9eadbd' />
+
+        <Spacing spacing={4} />
         <InfoSlide
           imageSrc='https://images.pexels.com/photos/6173860/pexels-photo-6173860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
           title='Testa våra egna spel'
@@ -84,6 +85,7 @@ const Activities: React.FunctionComponent = () => {
           imageRight
         />
       </Grid>
+      <Spacing spacing={4} />
     </>
   );
 };
