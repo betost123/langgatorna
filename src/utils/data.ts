@@ -16,16 +16,19 @@ export const categoryCardData = [
     imageSrc:
       "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     title: "Dagens lunch",
+    navLink: "/activities",
   },
   {
     imageSrc:
       "https://images.pexels.com/photos/6173860/pexels-photo-6173860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     title: "Dagens aktiviteter",
+    navLink: "/activities",
   },
   {
     imageSrc:
       "https://images.pexels.com/photos/1267351/pexels-photo-1267351.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     title: "Dagens erbjudanden",
+    navLink: "/activities",
   },
 ];
 
@@ -54,6 +57,33 @@ export const BarImages = [
     image:
       "https://images.pexels.com/photos/1876878/pexels-photo-1876878.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     alt: "image5",
+  },
+];
+
+export const dogFriendlyBarsList = [
+  {
+    name: "Dansken",
+    imageSrc: danskenImage,
+  },
+  {
+    name: "Ölstugan Tullen",
+    imageSrc: tullenImage,
+  },
+  {
+    name: "Contrast",
+    imageSrc: contrastImage,
+  },
+  {
+    name: "Byns Bistro",
+    imageSrc: bynsImage,
+  },
+  {
+    name: "Tvinky",
+    imageSrc: tvinkyImage,
+  },
+  {
+    name: "Kafe Magasinet",
+    imageSrc: magasinetBild,
   },
 ];
 

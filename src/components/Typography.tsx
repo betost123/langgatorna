@@ -62,8 +62,8 @@ const ButtonTextStyle = styled.p`
   color: black;
 `;
 
-const ActionTextStyle = styled.p<{ color?: string }>`
-  text-align: center;
+const ActionTextStyle = styled.p<{ color?: string; textAlign?: string }>`
+  text-align: ${(props) => (props.textAlign ? props.textAlign : "center")};
   font-size: 12px;
   letter-spacing: 2px;
   font-weight: 400;
@@ -139,7 +139,12 @@ export const H4: React.FunctionComponent<TextProps> = ({
 export const ActionText: React.FunctionComponent<TextProps> = ({
   children,
   color,
-}) => <ActionTextStyle color={color}>{children}</ActionTextStyle>;
+  textAlign,
+}) => (
+  <ActionTextStyle color={color} textAlign={textAlign}>
+    {children}
+  </ActionTextStyle>
+);
 
 export const ButtonText: React.FunctionComponent<TextProps> = ({
   children,

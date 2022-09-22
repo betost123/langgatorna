@@ -4,28 +4,25 @@ import Button from "../../components/Button";
 import GamePlayCard from "../../components/GamePlayCard";
 import Spacing from "../../components/Spacer";
 import { H2 } from "../../components/Typography";
-import { loveQuestions } from "../../utils/games/loveQuestions";
-import { peklekenData } from "../../utils/games/pekleken";
+import { moralQuestions } from "../../utils/games/moralQuestions";
 
-const LoveQuestions: React.FunctionComponent = () => {
-  const [questionsIndex, setQuestionsIdenx] = React.useState(0);
+const Moral: React.FunctionComponent = () => {
+  const [questionsIndex, setQuestionsIdenx] = React.useState(
+    Math.floor(Math.random() * moralQuestions.length + 1)
+  );
   const onClickNext = () => {
-    if (questionsIndex === 35) {
-      setQuestionsIdenx(0);
-    } else {
-      setQuestionsIdenx(questionsIndex + 1);
-    }
+    setQuestionsIdenx(Math.floor(Math.random() * moralQuestions.length));
   };
   return (
     <>
       <Spacing spacing={4} />
       <Row center='xs'>
-        <H2>36 questions to fall in love</H2>
+        <H2>Moralfrågor</H2>
       </Row>
       <Grid>
         <Row center='xs'>
           <Col md={6}>
-            <GamePlayCard text={loveQuestions[questionsIndex]} />
+            <GamePlayCard text={moralQuestions[questionsIndex]} />
           </Col>
         </Row>
         <Spacing spacing={6} />
@@ -39,4 +36,4 @@ const LoveQuestions: React.FunctionComponent = () => {
   );
 };
 
-export default LoveQuestions;
+export default Moral;

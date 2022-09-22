@@ -11,7 +11,7 @@ import magasinetBild from "../images/magasinet-bild.png";
 import CallToActionBanner from "../components/CallToActionBanner";
 import { BarImages, categoryCardData } from "../utils/data";
 import CategoryCard from "../components/CategoryCard";
-import { H2, H3 } from "../components/Typography";
+import { H3 } from "../components/Typography";
 
 const Image = styled.img<{ index: number }>`
   max-width: 100%;
@@ -59,7 +59,7 @@ const IndexPage = () => {
             key={category.title}
             imageSrc={category.imageSrc}
             title={category.title}
-            onClick={() => console.log(category.title)}
+            navLink={category.navLink}
           />
         ))}
       </Row>

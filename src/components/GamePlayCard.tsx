@@ -1,5 +1,6 @@
 import { navigate } from "gatsby";
 import * as React from "react";
+import { Row } from "react-flexbox-grid";
 import styled from "styled-components";
 import Button from "./Button";
 import { Divider } from "./Divider";
@@ -26,7 +27,9 @@ const GamePlayCard: React.FunctionComponent<GamePlayCardProps> = ({
     <Container bgColor={bgColor}>
       <Divider color='black' />
       <Spacing spacing={2} />
-      <Body color='black'>{text}</Body>
+      <Row center='xs'>
+        <Body color='black'>{text}</Body>
+      </Row>
       <Spacing spacing={2} />
       <Divider color='black' />
     </Container>

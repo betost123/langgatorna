@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import * as React from "react";
 import { Col } from "react-flexbox-grid";
 import styled, { keyframes } from "styled-components";
@@ -7,7 +8,7 @@ import { Body, InfoText } from "./Typography";
 interface CategoryCardProps {
   imageSrc: string;
   title: string;
-  onClick: () => void;
+  navLink: string;
 }
 
 const Container = styled.div`
@@ -68,16 +69,18 @@ const StyledImage = styled.img`
 const CategoryCard: React.FunctionComponent<CategoryCardProps> = ({
   imageSrc,
   title,
-  onClick,
+  navLink,
 }) => (
   <Column md={4}>
     <CardContainer>
       <StyledImage src={imageSrc} alt={title} />
-      <Overlay>
-        <Content>
-          <InfoText>{title}</InfoText>
-        </Content>
-      </Overlay>
+      <Link to={navLink}>
+        <Overlay>
+          <Content>
+            <InfoText>{title}</InfoText>
+          </Content>
+        </Overlay>
+      </Link>
     </CardContainer>
   </Column>
 );

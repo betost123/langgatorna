@@ -72,10 +72,12 @@ const NavBox = styled.div<INavBar>`
     align-items: center;
     justify-content: flex-start;
     padding-top: 10vh;
-    width: 130vw;
     height: 100vh;
     top: -35px;
     padding-top: 35%;
+    background-color: black;
+    margin-left: -100px;
+
     z-index: 1;
     left: ${(props) => (props.navBarOpen ? "-145px" : "-150%")};
     transition: all 0.3s ease-in;
@@ -115,6 +117,10 @@ const NavLink = styled(Link)`
   margin-right: 1rem;
   font-family: -apple-system, Roboto, sans-serif, serif;
   opacity: 0.7;
+
+  ${MediaQuery.TABLET} {
+    padding: 1rem;
+  }
 `;
 
 const NavBar: React.FC<INavBar> = ({
@@ -142,6 +148,9 @@ const NavBar: React.FC<INavBar> = ({
         </NavLink>
         <NavLink activeStyle={{ opacity: 1 }} to='/guestbook'>
           Gästbok
+        </NavLink>
+        <NavLink activeStyle={{ opacity: 1 }} to='/news'>
+          Nyheter
         </NavLink>
       </NavBox>
     </Navigation>

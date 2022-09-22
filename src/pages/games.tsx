@@ -70,7 +70,7 @@ const Games: React.FunctionComponent = () => {
         title='Barrunda på andra lång'
         text='Sugen på ett aktivt spel? Testa barrundan på andra lång! Vi har sammanställt listan på alla barer man måste klara, lätt, medel och expert-versioner!'
         buttonText='Läs mer'
-        link='/news-barrunda'
+        link='/news/barrunda-guide'
         bgColor='#62BAAC'
         imageRight
       />

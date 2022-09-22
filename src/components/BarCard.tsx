@@ -7,6 +7,7 @@ import { Body, H4, InfoText } from "./Typography";
 interface BarCardProps {
   imageSrc: string;
   name: string;
+  bgColor?: string;
 }
 
 const Image = styled.img`
@@ -15,18 +16,22 @@ const Image = styled.img`
   object-fit: cover;
 `;
 
-const TextContainer = styled.div`
-  background-color: #7fa6db;
+const TextContainer = styled.div<{ bgColor?: string }>`
+  background-color: ${(props) => (props.bgColor ? props.bgColor : "#7fa6db")};
   margin-top: -1rem;
   padding: 1rem;
   margin-bottom: 1rem;
 `;
 
-const BarCard: React.FunctionComponent<BarCardProps> = ({ imageSrc, name }) => {
+const BarCard: React.FunctionComponent<BarCardProps> = ({
+  imageSrc,
+  name,
+  bgColor,
+}) => {
   return (
     <Col md={4} xs={12}>
       <Image src={imageSrc} alt={name} />
-      <TextContainer>
+      <TextContainer bgColor={bgColor}>
         <H4 color='black'>{name}</H4>
       </TextContainer>
     </Col>

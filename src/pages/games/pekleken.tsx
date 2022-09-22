@@ -25,7 +25,7 @@ const Pekleken: React.FunctionComponent = () => {
             <GamePlayCard text={peklekenData[questionsIndex]} />
           </Col>
         </Row>
-        <Spacing spacing={4} />
+        <Spacing spacing={6} />
         <Row center='xs'>
           <Col md={6} style={{ marginLeft: "1rem" }}>
             <Button onClick={onClickNext}>Nästa</Button>
