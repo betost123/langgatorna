@@ -36,12 +36,6 @@ const HorizontalSpacer = styled.div`
 `;
 
 const Bars: React.FunctionComponent = () => {
-  const [isPresent, safeToRemove] = usePresence();
-
-  React.useEffect(() => {
-    !isPresent && setTimeout(safeToRemove, 1000);
-  }, [isPresent]);
-
   return (
     <>
       <Spacing spacing={5} />

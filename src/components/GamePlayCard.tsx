@@ -14,9 +14,8 @@ interface GamePlayCardProps {
 
 const Container = styled.div<{ bgColor: string }>`
   background-color: ${(props) => props.bgColor};
-  width: 100%;
-  height: 100%;
-  padding: 2rem 1rem 0 1rem;
+
+  padding: 1rem;
 `;
 
 const GamePlayCard: React.FunctionComponent<GamePlayCardProps> = ({

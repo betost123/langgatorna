@@ -22,7 +22,7 @@ const H2Style = styled.h2<{ color?: string }>`
   font-weight: 400;
   color: ${(props) => props.color ?? "white"};
   ${MediaQuery.MOBILE} {
-    font-size: 30px;
+    font-size: 26px;
   }
 `;
 
@@ -54,12 +54,12 @@ const InfoTextStyle = styled.h2<{ color?: string; textAlign?: string }>`
   }
 `;
 
-const ButtonTextStyle = styled.p`
-  text-align: center;
+const ButtonTextStyle = styled.p<{ color: string; textAlign: string }>`
+  text-align: ${(props) => props.textAlign};
   font-size: 12px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: black;
+  color: ${(props) => props.color};
 `;
 
 const ActionTextStyle = styled.p<{ color?: string; textAlign?: string }>`
@@ -154,4 +154,6 @@ export const ActionText: React.FunctionComponent<TextProps> = ({
 
 export const ButtonText: React.FunctionComponent<TextProps> = ({
   children,
-}) => <ButtonTextStyle>{children}</ButtonTextStyle>;
+  color = "black",
+  textAlign = "center",
+}) => <ButtonTextStyle color={color}>{children}</ButtonTextStyle>;

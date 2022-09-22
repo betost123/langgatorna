@@ -26,6 +26,7 @@ const StyledImage = styled.img`
 export const Footer: React.FC = () => {
   return (
     <Grid>
+      <Spacing spacing={4} />
       <Row end='xs'>
         <Col md={3} xs={6}>
           <H4 textAlign='left'>Kontakt</H4>

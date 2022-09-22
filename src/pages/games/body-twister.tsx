@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
+import BackButton from "../../components/BackButton";
 import Button from "../../components/Button";
 import GamePlayCard from "../../components/GamePlayCard";
 import Spacing from "../../components/Spacer";
@@ -50,26 +51,29 @@ const BodyTwister: React.FunctionComponent = () => {
 
   return (
     <>
+      <BackButton navLink='/games' />
+
       <Spacing spacing={4} />
       <Row center='xs'>
         <H2>Body Twister</H2>
       </Row>
       <Grid>
         <Row around='xs'>
-          <Col md={5}>
+          <Col md={5} xs={11}>
             <GamePlayCard text={bodyData[firstBodyIndex]} />
           </Col>
-          <Col md={5}>
+          <Col md={5} xs={11}>
             <GamePlayCard text={bodyData[secondBodyIndex]} />
           </Col>
         </Row>
         <Spacing spacing={6} />
         <Row center='xs'>
-          <Col md={6} style={{ marginLeft: "1rem" }}>
+          <Col md={6} xs={11} style={{ marginLeft: "1rem" }}>
             <Button onClick={onClickNext}>Nästa</Button>
           </Col>
         </Row>
       </Grid>
+      <Spacing spacing={4} />
     </>
   );
 };
