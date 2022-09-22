@@ -1,12 +1,24 @@
 import * as React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
+import styled from "styled-components";
 import ActivityCard from "../components/ActivityCard";
 import { Divider } from "../components/Divider";
 import HeroBanner from "../components/HeroBanner";
 import InfoSlide from "../components/InfoSlide";
+import LunchCard from "../components/LunchCard";
 import Spacing from "../components/Spacer";
 import { ActionText, H2, InfoText } from "../components/Typography";
 import { activitiesList, lunchOfToday } from "../utils/data";
+import { MediaQuery } from "../utils/styling-helpers";
+
+const StyledRow = styled(Row)`
+  display: flex;
+  justify-content: space-around;
+
+  ${MediaQuery.TABLET} {
+    display: block;
+  }
+`;
 
 const Activities: React.FunctionComponent = () => {
   const today = new Date();
@@ -33,16 +45,16 @@ const Activities: React.FunctionComponent = () => {
         <ActionText>
           Idag {dd} / {mm}
         </ActionText>
-        <Row center='xs' around='xs'>
+        <StyledRow>
           {activitiesList.map((activity) => (
-            <Col key={activity.title} md={3} xs={12}>
+            <Col key={activity.title} md={3} xs={11}>
               <ActivityCard
                 {...activity}
                 onClick={() => window.open(activity.navLink)}
               />
             </Col>
           ))}
-        </Row>
+        </StyledRow>
         <Spacing spacing={6} />
 
         <Divider color='#99b0a7' />
@@ -51,13 +63,15 @@ const Activities: React.FunctionComponent = () => {
         <ActionText>
           Dagens lunch {dd} / {mm}
         </ActionText>
-        <Row center='xs' around='xs'>
-          {lunchOfToday.map((lunch) => (
-            <Col key={lunch.title} md={3} xs={12}>
-              <ActivityCard {...lunch} />
-            </Col>
-          ))}
-        </Row>
+        <Grid>
+          <Row>
+            {lunchOfToday.map((lunch, index) => (
+              <Col key={lunch.restaurant + index} md={4} xs={11}>
+                <LunchCard {...lunch} />
+              </Col>
+            ))}
+          </Row>
+        </Grid>
 
         <Spacing spacing={8} />
         <InfoSlide

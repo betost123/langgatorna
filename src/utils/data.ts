@@ -10,7 +10,7 @@ import niansImage from "../images/9ans.png";
 import kickOffImage from "../images/kick-off.png";
 import tvinkyImage from "../images/tvinky.png";
 import magasinetBild from "../images/magasinet-bild.png";
-import { BarItem } from "./models";
+import { BarItem, LunchCardModel } from "./models";
 
 export const categoryCardData = [
   {
@@ -188,26 +188,74 @@ export const activitiesList = [
   },
 ];
 
-export const lunchOfToday = [
+export const lunchOfToday: Array<LunchCardModel> = [
   {
-    title: "Tvinky",
-    time: "11.30 - 15.00",
-    groupSize: "125 - 135 kr",
-    description:
-      "Dagens Fisk - Meunièrestekt Flundra. Veckans vegetariska - Friterad Fetaost. Veckans kött - Viltfärslimpa",
+    restaurant: "Tvinky",
+    navLink: "https://www.tvinky.se",
+    optionalInfo:
+      "Vi tar inte kontanter, men det går jättebra att betala med kort.",
+    lunchItems: [
+      {
+        nameOfDish: "Dagens Fisk",
+        info: "Bakad Bleka - Rostad Spetskål - Rotselleripuré - Gurkcitronette - Fänkålscrudité",
+        cost: 135,
+      },
+      {
+        nameOfDish: "Veckans Vegetariska",
+        info: "Friterad Fetaost - Bulgur - Rostad Tomatbuljong - Myntayoghurt - Aubergine - Harissa",
+        cost: 125,
+        allergies: ["vegetarian"],
+      },
+      {
+        nameOfDish: "Veckans Kött",
+        info: "Viltfärslimpa - Kokt Potatis - Lingon - Stekt Svamp - Ärtor - Gräddsås",
+        cost: 125,
+      },
+    ],
+  },
+
+  {
+    restaurant: "Tacos & Tequila",
+    navLink: "https://tacosandtequila.se/lunch",
+    optionalInfo:
+      "Side order of your choice (included). Red rice and refritos or Sweet potato fries.",
+    lunchItems: [
+      {
+        nameOfDish: "PULLED LAMB TACOS",
+        info: "Braised chili lamb / salsa verde / white onions/ pomegranate",
+        cost: 125,
+      },
+      {
+        nameOfDish: "CRISPY BROCCOLI TACOS",
+        info: "Beer battered broccoli / habanero BBQ / pickled onions / spring onions",
+        cost: 125,
+        allergies: ["vegetarian", "vegan", "lactose"],
+      },
+      {
+        nameOfDish: "CHILI SHRIMP TACOS",
+        info: "Chipotle marinated shrimps / herb mayo / jalapeño slaw / cilantro",
+        cost: 125,
+      },
+    ],
   },
   {
-    title: "Papa Mastani",
-    time: "11.30 - 15.00",
-    groupSize: "125 - 135 kr",
-    description:
-      "MAROKANSK HÖGREVSGRYTA MED PLOMMON & RIS. PASTA TAGLIATELLE MED VARMRÖKT LAX. SURDEGSPIZZA MED BURRATA, PESTO & SOLTORKADE TOMATER.",
-  },
-  {
-    title: "Brödernas",
-    time: "11.30 - 15.00",
-    groupSize: "120 kr",
-    description:
-      "Valfri enkelburgare inklusive pommes frites eller side salad. En läsk och kaffe ingår. Kycklingsallad, halloumisallad, barnsallad",
+    restaurant: "Papa Mastani",
+    navLink: "https://www.papamastani.se/blank-2",
+    lunchItems: [
+      {
+        nameOfDish:
+          "KALV WALLENBERGARE MED SKIRAT SMÖR, POTATISMOS & GRÖNA ÄRTOR.",
+        cost: 129,
+      },
+      {
+        nameOfDish: "STEKT STRÖMMING MED ÄRTPURÉ & SALTROSTAD POTATIS.",
+        cost: 129,
+        allergies: ["gluten", "vegan"],
+      },
+      {
+        nameOfDish: "GREKISK MOUSSAKA MED TOMATSÅS & FETAOST",
+        cost: 129,
+      },
+    ],
   },
 ];

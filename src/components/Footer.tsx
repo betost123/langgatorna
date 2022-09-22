@@ -2,7 +2,7 @@ import { Link } from "gatsby";
 import * as React from "react";
 import { Col, Grid, Row } from "react-flexbox-grid";
 import styled from "styled-components";
-import { ActionText, H4 } from "./Typography";
+import { ActionText, H4, SmallBody } from "./Typography";
 import swishQrCode from "../images/swish-qr.png";
 import Spacing from "./Spacer";
 
@@ -66,6 +66,7 @@ export const Footer: React.FC = () => {
 
         <Col md={3} xs={6}>
           <H4 textAlign='right'>Stötta oss</H4>
+          <SmallBody textAlign='right'>070-936 80 57</SmallBody>
           <StyledImage src={swishQrCode} />
         </Col>
       </Row>

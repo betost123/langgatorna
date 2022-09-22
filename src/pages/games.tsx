@@ -49,13 +49,15 @@ const Games: React.FunctionComponent = () => {
         <Col>
           <H2>Spel</H2>
         </Col>
-        <Row>
-          {gamesList.map((game) => (
-            <Col md={4} xs={11} key={game.title}>
-              <GameCard {...game} />
-            </Col>
-          ))}
-        </Row>
+        <Grid>
+          <Row>
+            {gamesList.map((game) => (
+              <Col md={4} xs={11} key={game.title}>
+                <GameCard {...game} />
+              </Col>
+            ))}
+          </Row>
+        </Grid>
         <Spacing spacing={4} />
         <InfoSlide
           imageSrc={barrundaImage}

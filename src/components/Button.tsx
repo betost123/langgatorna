@@ -15,6 +15,7 @@ const SecondaryButton = styled.button`
   border-width: 1px;
   background-color: rgba(0, 0, 0, 0.1);
   width: 100%;
+  cursor: pointer;
 `;
 
 const PrimaryButton = styled.button`
@@ -22,6 +23,7 @@ const PrimaryButton = styled.button`
   border-radius: 2rem;
   background-color: white;
   width: 100%;
+  cursor: pointer;
 `;
 
 const TetriaryButton = styled.button`
@@ -31,6 +33,7 @@ const TetriaryButton = styled.button`
   border-width: 1px;
   background-color: rgba(0, 0, 0, 0.1);
   width: 100%;
+  cursor: pointer;
 `;
 
 const Button: React.FunctionComponent<ButtonProps> = ({
